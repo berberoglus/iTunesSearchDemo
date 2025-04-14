@@ -23,12 +23,29 @@ struct SearchResultItem: Decodable {
     let formattedPrice: String?
     let trackViewUrl: URL?
     let description: String?
-    var imageData: Data?
 }
 
 extension SearchResultItem: Identifiable {
     var id: String {
         return "\(artistId)-\(trackId)"
+    }
+}
+
+extension SearchResultItem {
+    func toModel() -> SearchResultItemModel {
+        return SearchResultItemModel.init(
+            artistId: artistId,
+            trackId: trackId,
+            artistName: artistName,
+            trackName: trackName,
+            artworkUrl100: artworkUrl100,
+            releaseDate: releaseDate,
+            genres: genres,
+            formattedPrice: formattedPrice,
+            trackViewUrl: trackViewUrl,
+            desc: description,
+            imageData: nil
+        )
     }
 }
 
@@ -45,8 +62,7 @@ extension SearchResultItem {
             genres: ["Sci-Fi & Fantasy", "Books"],
             formattedPrice: "$13.99",
             trackViewUrl: nil,
-            description: nil,
-            imageData: nil
+            description: nil
         ),
         SearchResultItem(
             artistId: 1221,
@@ -60,8 +76,7 @@ extension SearchResultItem {
             genres: [],
             formattedPrice: "$13.99",
             trackViewUrl: nil,
-            description: nil,
-            imageData: nil
+            description: nil
         ),
         SearchResultItem(
             artistId: 1224,
@@ -73,8 +88,7 @@ extension SearchResultItem {
             genres: ["Sci-Fi & Fantasy", "Books"],
             formattedPrice: nil,
             trackViewUrl: nil,
-            description: nil,
-            imageData: nil
+            description: nil
         )
     ]
 }

@@ -7,17 +7,19 @@
 
 import SwiftUI
 import Kingfisher
+import SwiftData
 
-struct SearchResultItemView: View {
-    let items: [SearchResultItem]
+struct SearchResultsView: View {
+    @Environment(\.modelContext) private var context
+    @Query private var searchResults: [SearchResultItemModel]
 
     var body: some View {
         Group {
-            if items.isEmpty {
+            if searchResults.isEmpty {
                 contentUnavailableView
             } else {
                 List {
-                    ForEach(items) { item in
+                    ForEach(searchResults) { item in
                         NavigationLink {
                             SearchResultItemDetailView(item: item)
                         } label: {
@@ -32,7 +34,7 @@ struct SearchResultItemView: View {
 
 // MARK: - Subviews
 
-private extension SearchResultItemView {
+private extension SearchResultsView {
     @ViewBuilder
     var contentUnavailableView: some View {
         ContentUnavailableView(
@@ -43,9 +45,12 @@ private extension SearchResultItemView {
     }
 
     @ViewBuilder
-    func createItemView(for item: SearchResultItem) -> some View {
+    func createItemView(for item: SearchResultItemModel) -> some View {
         HStack {
             KFImage(item.artworkUrl100)
+                .onSuccess { result in
+                    item.imageData = result.image.pngData()
+                }
                 .resizable()
                 .frame(width: 100, height: 100)
             createLabeledContentViews(for: item)
@@ -53,7 +58,7 @@ private extension SearchResultItemView {
     }
 
     @ViewBuilder
-    private func createLabeledContentViews(for item: SearchResultItem) -> some View {
+    private func createLabeledContentViews(for item: SearchResultItemModel) -> some View {
         let contentDict = [
             "Track Name": item.trackName,
             "Artist Name": item.artistName,
@@ -78,7 +83,5 @@ private extension SearchResultItemView {
 }
 
 #Preview {
-    SearchResultItemView(
-        items: SearchResultItem.mockItems
-    )
+    SearchResultsView()
 }

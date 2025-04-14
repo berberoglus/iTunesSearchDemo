@@ -24,7 +24,7 @@ struct SearchEndpoints {
         SearchEndpoint(
             path: Path.search.path,
             method: .get,
-            queryParameters: ["term": term, "limit": "200", "entity": "ebook"]
+            queryParameters: ["term": term, "limit": "20", "entity": "ebook"]
         )
     }
 }

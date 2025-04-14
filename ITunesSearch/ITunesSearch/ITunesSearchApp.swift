@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ITunesSearchApp: App {
@@ -13,5 +14,6 @@ struct ITunesSearchApp: App {
         WindowGroup {
             SearchSceneView()
         }
+        .modelContainer(for: SearchResultItemModel.self)
     }
 }

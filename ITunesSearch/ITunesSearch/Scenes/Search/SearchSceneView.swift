@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchSceneView: View {
-    @State private var items: [SearchResultItem] = []
+    @Environment(\.modelContext) private var context
     @State private var searchText = ""
     @State private var isSearchEnabled: Bool = false
 
@@ -18,8 +18,16 @@ struct SearchSceneView: View {
         NavigationStack {
             Button {
                 Task {
-                    let result = try? await repository.search(for: searchText)
-                    items = result?.results ?? []
+                    guard let result = try? await repository.search(for: searchText) else {
+                        return
+                    }
+                    try? context.transaction {
+                        try context.delete(model: SearchResultItemModel.self)
+                        result.results.forEach { item in
+                            context.insert(item.toModel())
+                        }
+                        try context.save()
+                    }
                     isSearchEnabled = false
                     searchText = ""
                 }
@@ -27,8 +35,9 @@ struct SearchSceneView: View {
                 Text("Search")
             }
             .buttonStyle(.borderedProminent)
+            .disabled(searchText.isEmpty)
 
-            SearchResultItemView(items: items)
+            SearchResultsView()
                 .searchable(text: $searchText, isPresented: $isSearchEnabled, prompt: "Search Term")
                 .navigationTitle("Search Results")
         }

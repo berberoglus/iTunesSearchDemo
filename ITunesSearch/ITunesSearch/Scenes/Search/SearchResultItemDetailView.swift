@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct SearchResultItemDetailView: View {
-    let item: SearchResultItem
+    let item: SearchResultItemModel
 
     var body: some View {
         NavigationStack {
@@ -33,14 +33,14 @@ struct SearchResultItemDetailView: View {
     }
 
     @ViewBuilder
-    private func createLabeledContentViews(for item: SearchResultItem) -> some View {
+    private func createLabeledContentViews(for item: SearchResultItemModel) -> some View {
         let contentDict = [
             "Track Name": item.trackName,
             "Artist Name": item.artistName,
             "Price": item.formattedPrice,
             "Relaease Date": item.releaseDate.toFormattedDateString(),
             "Genres": item.genres.joined(separator: ", ").nilWhenEmpty,
-            "Description": item.description?.nilWhenEmpty,
+            "Description": item.desc?.nilWhenEmpty,
         ]
             .compactMapValues { $0 }
             .sorted(by: { $0.key < $1.key })
@@ -57,11 +57,11 @@ struct SearchResultItemDetailView: View {
                 }
             }
             .padding()
-            .border(Color.gray, width: 1)
+            .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
         }
     }
 }
 
 #Preview {
-    SearchResultItemDetailView(item: SearchResultItem.mockItems[0])
+    SearchResultItemDetailView(item: SearchResultItem.mockItems[0].toModel())
 }
