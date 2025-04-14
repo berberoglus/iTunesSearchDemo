@@ -111,7 +111,7 @@ final class HTTPClient {
         do {
             let decodedResponse = try JSONDecoder().decode(responseType.self, from: data)
             return decodedResponse
-        } catch let error {
+        } catch {
             throw HTTPError.noDecodable
         }
     }
