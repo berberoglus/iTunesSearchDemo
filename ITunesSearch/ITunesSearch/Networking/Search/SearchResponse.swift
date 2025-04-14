@@ -40,7 +40,7 @@ extension SearchResultItem {
             trackName: trackName,
             artworkUrl100: artworkUrl100,
             releaseDate: releaseDate,
-            genres: genres,
+            genres: genres.joined(separator: ", ").nilWhenEmpty,
             formattedPrice: formattedPrice,
             trackViewUrl: trackViewUrl,
             desc: description,

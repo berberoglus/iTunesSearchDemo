@@ -18,7 +18,7 @@ final class SearchResultItemModel {
     var trackName: String = ""
     var artworkUrl100: URL? = nil
     var releaseDate: String = ""
-    var genres: [String]
+    var genres: String?
     var formattedPrice: String?
     var trackViewUrl: URL?
     var desc: String?
@@ -32,7 +32,7 @@ final class SearchResultItemModel {
         trackName: String,
         artworkUrl100: URL?,
         releaseDate: String,
-        genres: [String],
+        genres: String?,
         formattedPrice: String?,
         trackViewUrl: URL?,
         desc: String?,

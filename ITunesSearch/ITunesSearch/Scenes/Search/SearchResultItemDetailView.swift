@@ -39,7 +39,7 @@ struct SearchResultItemDetailView: View {
             "Artist Name": item.artistName,
             "Price": item.formattedPrice,
             "Relaease Date": item.releaseDate.toFormattedDateString(),
-            "Genres": item.genres.joined(separator: ", ").nilWhenEmpty,
+            "Genres": item.genres,
             "Description": item.desc?.nilWhenEmpty,
         ]
             .compactMapValues { $0 }
