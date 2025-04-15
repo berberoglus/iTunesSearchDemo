@@ -50,7 +50,7 @@ struct SearchSceneView: View {
         }
     }
 
-    private func search(){
+    private func search() {
         Task {
             isRequestInProgress = true
             do {

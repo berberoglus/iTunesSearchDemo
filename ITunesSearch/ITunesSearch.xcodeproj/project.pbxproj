@@ -8,15 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		B194A29C2DACC6140034F8A8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B194A29B2DACC6140034F8A8 /* Kingfisher */; };
+		B19CC9E12DAE172E006D6BCA /* SBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B19CC9E02DAE172E006D6BCA /* SBNetworking */; };
+		B19CC9E42DAE17A8006D6BCA /* SBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B19CC9E32DAE17A8006D6BCA /* SBNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B1B7C4B82DAC67DC0036AD96 /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B19CC9E62DAE17E2006D6BCA /* Exceptions for "ITunesSearch" folder in "ITunesSearch" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ITunesSearch/SBNetworking,
+			);
+			target = B1B7C4B72DAC67DC0036AD96 /* ITunesSearch */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B1B7C4BA2DAC67DC0036AD96 /* ITunesSearch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B19CC9E62DAE17E2006D6BCA /* Exceptions for "ITunesSearch" folder in "ITunesSearch" target */,
+			);
 			path = ITunesSearch;
 			sourceTree = "<group>";
 		};
@@ -28,6 +43,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B194A29C2DACC6140034F8A8 /* Kingfisher in Frameworks */,
+				B19CC9E42DAE17A8006D6BCA /* SBNetworking in Frameworks */,
+				B19CC9E12DAE172E006D6BCA /* SBNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +88,8 @@
 			name = ITunesSearch;
 			packageProductDependencies = (
 				B194A29B2DACC6140034F8A8 /* Kingfisher */,
+				B19CC9E02DAE172E006D6BCA /* SBNetworking */,
+				B19CC9E32DAE17A8006D6BCA /* SBNetworking */,
 			);
 			productName = ITunesSearch;
 			productReference = B1B7C4B82DAC67DC0036AD96 /* ITunesSearch.app */;
@@ -102,6 +121,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B194A29A2DACC6140034F8A8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B19CC9E22DAE17A8006D6BCA /* XCLocalSwiftPackageReference "../SBNetworking" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B1B7C4B92DAC67DC0036AD96 /* Products */;
@@ -330,6 +350,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		B19CC9E22DAE17A8006D6BCA /* XCLocalSwiftPackageReference "../SBNetworking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SBNetworking;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		B194A29A2DACC6140034F8A8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -346,6 +373,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B194A29A2DACC6140034F8A8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		B19CC9E02DAE172E006D6BCA /* SBNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SBNetworking;
+		};
+		B19CC9E32DAE17A8006D6BCA /* SBNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SBNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

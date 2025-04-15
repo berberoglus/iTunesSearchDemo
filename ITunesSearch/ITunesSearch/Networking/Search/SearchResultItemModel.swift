@@ -8,7 +8,6 @@
 import Foundation
 import SwiftData
 
-
 @Model
 final class SearchResultItemModel {
     var artistId: Int = 0
@@ -16,7 +15,7 @@ final class SearchResultItemModel {
     var trackId: Int = 0
     var artistName: String = ""
     var trackName: String = ""
-    var artworkUrl100: URL? = nil
+    var artworkUrl100: URL?
     var releaseDate: String = ""
     var genres: String?
     var formattedPrice: String?
