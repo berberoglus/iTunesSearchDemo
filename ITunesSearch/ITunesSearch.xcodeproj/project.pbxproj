@@ -10,28 +10,17 @@
 		B194A29C2DACC6140034F8A8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B194A29B2DACC6140034F8A8 /* Kingfisher */; };
 		B19CC9E12DAE172E006D6BCA /* SBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B19CC9E02DAE172E006D6BCA /* SBNetworking */; };
 		B19CC9E42DAE17A8006D6BCA /* SBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B19CC9E32DAE17A8006D6BCA /* SBNetworking */; };
+		B1A338792DAE1B8200B76832 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B1A338782DAE1B8200B76832 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1A338782DAE1B8200B76832 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		B1B7C4B82DAC67DC0036AD96 /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B19CC9E62DAE17E2006D6BCA /* Exceptions for "ITunesSearch" folder in "ITunesSearch" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ITunesSearch/SBNetworking,
-			);
-			target = B1B7C4B72DAC67DC0036AD96 /* ITunesSearch */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B1B7C4BA2DAC67DC0036AD96 /* ITunesSearch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				B19CC9E62DAE17E2006D6BCA /* Exceptions for "ITunesSearch" folder in "ITunesSearch" target */,
-			);
 			path = ITunesSearch;
 			sourceTree = "<group>";
 		};
@@ -54,6 +43,7 @@
 		B1B7C4AF2DAC67DC0036AD96 = {
 			isa = PBXGroup;
 			children = (
+				B1A338782DAE1B8200B76832 /* Localizable.xcstrings */,
 				B1B7C4BA2DAC67DC0036AD96 /* ITunesSearch */,
 				B1B7C4B92DAC67DC0036AD96 /* Products */,
 			);
@@ -116,6 +106,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = B1B7C4AF2DAC67DC0036AD96;
 			minimizedProjectReferenceProxies = 1;
@@ -138,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A338792DAE1B8200B76832 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +205,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -269,6 +262,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

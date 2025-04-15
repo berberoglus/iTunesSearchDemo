@@ -34,25 +34,23 @@ struct SearchResultItemDetailView: View {
 
     @ViewBuilder
     private func createLabeledContentViews(for item: SearchResultItemModel) -> some View {
-        let contentDict = [
-            "Track Name": item.trackName,
-            "Artist Name": item.artistName,
-            "Price": item.formattedPrice,
-            "Relaease Date": item.releaseDate.toFormattedDateString(),
-            "Genres": item.genres,
-            "Description": item.desc?.nilWhenEmpty,
-        ]
-            .compactMapValues { $0 }
-            .sorted(by: { $0.key < $1.key })
+        let contents: [LocalizedKeyValue] = [
+            .init(key: "Artist Name", value: item.artistName),
+            .init(key: "Track Name", value: item.trackName),
+            .init(key: "Relaease Date", value: item.releaseDate.toFormattedDateString()),
+            .init(key: "Genres", value: item.genres),
+            .init(key: "Price", value: item.formattedPrice),
+            .init(key: "Description", value: item.desc),
+        ].filter { $0.value != nil }
 
         VStack {
-            ForEach(contentDict, id: \.key) { key, value in
+            ForEach(contents) { content in
                 LabeledContent {
-                    Text(value)
+                    Text(content.value ?? "")
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text(key)
+                    Text(content.key)
                         .foregroundStyle(.primary)
                 }
             }

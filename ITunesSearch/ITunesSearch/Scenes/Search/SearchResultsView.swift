@@ -59,22 +59,20 @@ private extension SearchResultsView {
 
     @ViewBuilder
     private func createLabeledContentViews(for item: SearchResultItemModel) -> some View {
-        let contentDict = [
-            "Track Name": item.trackName,
-            "Artist Name": item.artistName,
-            "Price": item.formattedPrice
-        ]
-            .compactMapValues { $0 }
-            .sorted(by: { $0.key < $1.key })
+        let contents: [LocalizedKeyValue] = [
+            .init(key: "Track Name", value: item.trackName),
+            .init(key: "Artist Name", value: item.artistName),
+            .init(key: "Price", value: item.formattedPrice),
+        ].filter { $0.value != nil }
 
         VStack {
-            ForEach(contentDict, id: \.key) { key, value in
+            ForEach(contents) { content in
                 LabeledContent {
-                    Text(value)
+                    Text(content.value ?? "")
                         .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 } label: {
-                    Text(key)
+                    Text(content.key)
                         .foregroundStyle(.primary)
                 }
             }

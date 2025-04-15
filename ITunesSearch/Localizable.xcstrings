@@ -1,0 +1,176 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Artist Name" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artistnamn"
+          }
+        }
+      }
+    },
+    "Description" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beskrivning"
+          }
+        }
+      }
+    },
+    "Error!" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fel!"
+          }
+        }
+      }
+    },
+    "Genres" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genrer"
+          }
+        }
+      }
+    },
+    "No results found" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga resultat hittades"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Price" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pris"
+          }
+        }
+      }
+    },
+    "Relaease Date" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Releasedatum"
+          }
+        }
+      }
+    },
+    "Retry" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Försöka igen"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sök"
+          }
+        }
+      }
+    },
+    "Search Results" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sökresultat"
+          }
+        }
+      }
+    },
+    "Search Term" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sökterm"
+          }
+        }
+      }
+    },
+    "Searching..." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sökande..."
+          }
+        }
+      }
+    },
+    "Something went wrong while searching." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Något gick fel under sökningen."
+          }
+        }
+      }
+    },
+    "Store Page" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Butikssida"
+          }
+        }
+      }
+    },
+    "Track Name" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spårnamn"
+          }
+        }
+      }
+    },
+    "Try searching for something else." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Försök att söka efter något annat."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
